@@ -1,0 +1,15 @@
+- name: Deploy Fitness App
+  hosts: all
+  become: true
+  tasks:
+    - name: Pull latest Docker image
+      command: docker pull yourdockerhub/fitness-django:latest
+
+    - name: Stop existing container
+      command: docker stop fitness_django || true
+
+    - name: Remove old container
+      command: docker rm fitness_django || true
+
+    - name: Run new container
+      command: docker run -d --name fitness_django -p 8001:8000 yourdockerhub/fitness-django:latest
