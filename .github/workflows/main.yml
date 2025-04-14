@@ -44,5 +44,5 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t yourdockerhub/fitness-django:latest .
-          docker push yourdockerhub/fitness-django:latest
+          docker build -t elisa278/fitness-django:latest .
+          docker push elisa278/fitness-django:latest
